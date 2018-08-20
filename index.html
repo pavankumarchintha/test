@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Login Form Design</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript">
+ function validateform(){  
+var name=document.myform.txtmail.value
+var password=document.myform.txtpwd.value
+if (name==null || name=="")
+alert("fields required"); 
+break;
+ var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+            if (reg.test(txtmail) == true) 
+            {
+             if(password.length==8){  
+                window.location.href='home.html'
+            }
+            else
+                alert("password should be atleast 8 characters i number and i capital letter")
+            }
+            else
+                alert("emil shoud be in @gmail.com format")
+  }  
+}  
+</script>  
+</head>
+<body>
+    <div class="loginbox">
+    <img src="images/avator.png" class="avatar">
+        <h1>Admin Login</h1>
+        <p>Sign into your account</p>
+        <form name="myform" method="post" action="home.html" onsubmit="return validateform()" >
+            
+            <input type="email" name="txtmail" placeholder="drone@gmail.com">
+            
+            <input type="password" name="txtpwd" placeholder="Enter password">
+      		<div>
+      		<input type="checkbox" name="remember"> Remember me
+            <input type="submit" value="Login"  >
+            </div>
+            <div class="footer">
+            	<h6>connect with :</h6>
+            	<img src="twitter.jpg" class="img">
+            	<img src="facebook.png" class="img">
+            </div>
+        </form>
+        
+    </div>
+
+</body>
+</head>
+</html>
